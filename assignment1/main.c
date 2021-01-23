@@ -34,11 +34,43 @@ void qsort2(int* a, int n){
     qsort_helper(a, 0, n - 1); // do quicksort using helper
 }
 
+void merge(int* a, int* aux, int left, int mid, int right){
+    int lhs = left; // index to the smallest element in the left hand side of the array
+    int rhs = mid + 1; // index to the smallest element in the right hand side of the array
+    int aux_current_idx = left; // the auxillary will start with the left index as it is the starting point of this subarray
+    while(lhs <= mid && rhs <= right){ // while we are still in bound of the two subarray's
+        if(a[lhs] < a[rhs]){ // the lhs element is smaller
+            aux[aux_current_idx++] = a[lhs++]; // auxillary is given the lhs element and the lhs index is incremented to point to the next element
+        } else{
+            aux[aux_current_idx++] = a[rhs++]; // auxilary is given the rhs element and the rhs index is incremented to point to the next element
+        }
+    }
+    while(lhs <= mid) aux[aux_current_idx++] = a[lhs++]; // while we have not exhause the left subarray give its elements to the auxilarray
+    while(rhs <= right) aux[aux_current_idx++] = a[rhs++]; // while we have not exhausted the right subarray give its elements to the auxillary
+    for(int i = left;i <= right;i++){ // copy all of the auxillary elements back to the original array
+        a[i] = aux[i];
+    }
+}
+
+void msort_helper(int* a, int* aux, int left, int right){
+    if(right <= left) return; // once the pointers have crossed no work is need to be done
+    int mid = (left + right) / 2; // get the mid point of the array
+    msort_helper(a, aux, left, mid); // recursively sort the left hand side of the array
+    msort_helper(a, aux, mid + 1, right); // recursively sort the right hand side of the array
+    merge(a, aux, left, mid, right); // merge the left hand side and right side of the array
+}
+
+void msort(int* a, int n){
+    int *aux = malloc(sizeof(int) * n); // allocate an auxillary array for a helper for the merge portion of the merge sort
+    msort_helper(a, aux, 0, n - 1); // do the mergesort
+    free(aux); // free the auxillary array
+}
+
 
 int main() {
     int a[] = {4, 65, 2, -31, 0, 99, 2, 83, 287, 1};
     int length = sizeof(a) / sizeof(a[0]);
-    qsort2(a, length);
+    msort(a, length);
     for(int i = 0;i < length;i++){
         printf("%i ", a[i]);
     }
