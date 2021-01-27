@@ -43,7 +43,7 @@ int signum2(int n){
 	return (n < 0) ? -1 : ((n > 0) ? 1 : 0);
 }
 
-// Loops and recursion
+// Loops and recursion n!
 int factorial1(int n){ // loop
 	int f = 1;
 

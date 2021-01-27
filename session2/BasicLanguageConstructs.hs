@@ -45,13 +45,16 @@ signum2 n | n < 0 = -1
 -- Recursion
 
 -- Factorial with if-then-else
+-- non-tail recursive
 factorial1 n = if n == 0 then 1 else n * factorial1 (n - 1)
 
 -- Factorial with pattern matching
+-- non-tail recursive
 factorial2 0 = 1
 factorial2 n = n * factorial2 (n - 1)
 
 -- Factorial with accumulating parameter
+-- Tail recursive version
 factorial3 n = fact_acc n 1
 	where
 		fast_acc 0 f = f
@@ -60,11 +63,14 @@ factorial3 n = fact_acc n 1
 factorial4 n = product [1..n]
 
 -- Naive fibonacci numbers
+-- T(n) = T(n - 1) + T(n - 2)
+-- T(n) = O(2**n)
 fib1 0 = 0
 fib1 1 = 1
 fib1 n = fib1(n - 1) + fib1(n - 2)
 
 -- Fibonacci numbers with two accumulating parameters
+-- T(n) = O(n)
 fib2 n = fib_acc n 0 1
 	where
 		fib_acc 0 a _ = a
