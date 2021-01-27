@@ -6,17 +6,20 @@
 module BasicLanguageConstructs where
 
 -- Variables
-seven = 7
-
-sq123 = let x = 123 in x * x
+-- Haskell uses algorithm called type inference to infers all types
+seven = 7 -- Num p => p 
+-- seven = 8 error, variables in haskell can't be changed. Immutable
+sq123 = let x = 123 in x * x -- defined variable x with local scope 
 
 sq321 = x * x where x = 321
 
 -- Functions
-twice1 n = 2 * n
-twice2 = \n -> 2 * n -- lambda-expression
+-- Syntatic sugar is syntax designed to make things easier to read or to express but can defined in terms of constructs already in the language
+twice1 n = 2 * n -- syntatic sugar, sweetened
+twice2 = \n -> 2 * n -- lambda-expression, unsweetened
 
-twice3 = (2*) -- section
+twice3 = (2*) -- section, partial application on infix operators
+twice4 = (*) 2 -- unsugared
 
 average1 :: Float -> Float -> Float
 average1 a b = (a + b) / 2
