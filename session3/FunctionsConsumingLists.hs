@@ -59,4 +59,10 @@ foldr f z (x:xs') = x `f` (foldr f z xs')
 -- Thus we can define them in terms for foldr:
 sum' = foldr (+) 0
 product' = foldr (*) 1
+-- foldr (*) 1 [1, 2, 3]
+-- == foldr (*) 1 (1 : (2 : (3: [])))
+-- == 1 * (2 * (3 * 1))
 length'  = foldr (\a b -> 1 + b) 0
+-- foldr (\a b -> 1 + b) 0 [1, 2, 3,]
+-- foldr (\a b -> 1 + b) 0 1 : (2 : (3 : []))
+-- == 1 + (1 + (1 + 0))
