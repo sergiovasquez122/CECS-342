@@ -1,3 +1,4 @@
+module QSort where 
 qsort :: Ord a => [a] -> [a] -- quick sort a list in haskell
 qsort [] = [] -- quicksort on the empty list is the empty list
 qsort (x:xs) = -- the case where we have at least an element
