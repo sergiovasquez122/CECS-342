@@ -1,7 +1,7 @@
 module MSort where
 msort :: Ord a => [a] -> [a] -- merge sort a list in Haskell
 msort [] = [] -- Empty list is sorted
-msort [x] = [x]
+msort [x] = [x] -- list with single element is sorted
 msort xs = merge (msort lhs) (msort rhs) -- We recursively sort the lhs and rhs then merge them to have a sorted array
     where merge xs [] = xs -- rhs fully used, return the lhs side
           merge [] ys = ys -- lhs full used, return the rhs side
