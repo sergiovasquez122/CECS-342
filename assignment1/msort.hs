@@ -1,4 +1,6 @@
 module MSort where
+    -- T(n) = 2 * T(n / 2) + O(n)
+    -- T(n) = O(n * log(n))
 msort :: Ord a => [a] -> [a] -- merge sort a list in Haskell
 msort [] = [] -- Empty list is sorted
 msort [x] = [x] -- list with single element is sorted
