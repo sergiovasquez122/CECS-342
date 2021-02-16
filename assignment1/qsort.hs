@@ -1,4 +1,8 @@
-module QSort where 
+module QSort where
+    -- worst O(n**2)
+    -- average (below)
+    -- T(n) = 2 * T(n / 2) + O(n)
+    -- T(n) = O(n * logn) 
 qsort :: Ord a => [a] -> [a] -- quick sort a list in haskell
 qsort [] = [] -- quicksort on the empty list is the empty list
 qsort (x:xs) = -- the case where we have at least an element
