@@ -66,3 +66,47 @@ module Review where
 -- c. incorrect syntax
 -- d. tail recursion
 ---  b is the correct answer
+
+-- 5. Which Haskell language feature is used where other languages would use NULL
+-- a. lazy evaluation
+-- b. monads
+-- c. algebraic data types, in particular co-products
+-- d. type classes
+-- c is the correct answer
+
+-- 6. what makes a recursive function definition tail recursive?
+-- a. the function has at most one argument
+-- b. the function has no local variables
+-- c. there's exactly one recursive call and its return value is immediately returned by the calling function
+-- d. the function returning a Boolean
+-- c is the correct answer
+
+-- 7. Consider the Haskell function definition
+-- const x _= x
+-- evaluate 
+--  const (1+) 10 100
+-- 101
+
+-- 8. Consider the Haskell function definition
+-- const x _ = x
+-- what is the type of const?
+-- a. const :: a -> b -> c
+-- b. const :: a -> b -> a
+-- c. const :: a -> b -> b
+-- d. const :: a -> a -> b
+-- e. const :: b -> b -> a
+-- b is the correct answer
+
+-- 9.  Consider the Haskell function definition
+-- const x _ = x
+-- evaluate the Haskell expression
+-- foldr (const (1+)) 0 [1, 2, 3]
+--  3 is the correct answer
+
+-- 10. What does the function foldr (++) [] do?
+-- a. concatenate two list
+-- b. flatten a list of lists
+-- c. reverse a list
+-- d. count the elements of a list
+-- e. nothing
+-- b is the correct answer
