@@ -57,3 +57,12 @@ module Review where
 -- Which technique can be used to transform a recursive funciton into an equivalent tail recursive function?
 -- accumulating parameters
 
+-- 4. In the Haskell function definition
+-- product [] = 1
+-- product (x:xs) = x * product xs
+-- we used an example of
+-- a. list concatentation
+-- b. pattern matching
+-- c. incorrect syntax
+-- d. tail recursion
+---  b is the correct answer
