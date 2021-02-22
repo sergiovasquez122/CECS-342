@@ -116,5 +116,3 @@ toTree = foldr insert Tip
 -- Use our tree data structure for sorting
 sort :: Ord a => [a] -> [a]
 sort = AlgebraicDataTypes.toList . toTree
-
-
