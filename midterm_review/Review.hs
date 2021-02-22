@@ -110,3 +110,36 @@ module Review where
 -- d. count the elements of a list
 -- e. nothing
 -- b is the correct answer
+
+-- 11. What does the following evaluate to 
+-- foldr (+) 0 [1, 2, 3]
+-- 1 + (2 + (3 + 0))
+-- 6
+
+-- 12. What does the following evaluate to 
+-- foldr (-) 0 [1, 2, 3]
+-- 1 - (2 - (3 - 0))
+-- 1 - (-1)
+-- 2
+
+-- 13. What does the following evaluate to 
+-- foldr (-) 7 [1, 2, 3]
+-- 1 - (2 - (3 - 7))
+-- 1 - (2 - (-4))
+-- 1 - (6)
+-- -5
+
+-- 14. What does the following evaluate to 
+-- foldr (:) [] [1, 2, 3]
+-- 1 : (2 : (3 : []))
+-- [1, 2, 3]
+
+-- 15. What does the following evaluate to 
+-- foldl (-) 7 [1, 2, 3]
+-- ((7 - 1) - 2) - 3
+-- 1
+
+-- 16. What does the following evaluate to 
+-- foldl (flip (:)) [] [1, 2, 3]
+-- 3 : (2 : (1 :[]))
+-- [3, 2, 1]
