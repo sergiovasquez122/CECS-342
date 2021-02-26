@@ -42,4 +42,33 @@ module Question_review where
 -- data (a, b) = (a, b)
 -- fst (a, _) = a
 -- snd (_, b) = b
+--
+-- What kind of functions are fst and snd?
+-- 1. setters
+-- 2. injections
+-- 3. projections
+-- 4. methods
+-- 5. bijections
+-- 3 is the correct answer
+
+-- What makes a recursive function definition tail recursive?
+-- 1. the function has at most one argument
+-- 2. the function has no side effects
+-- 3. it contains exactly one recursive call and its return value is immediately returned by the calling function
+-- 4. the function returns a Boolean
+-- 5. the function has no local variables
+-- 3 is the correct answer
+
+-- which language feature is not a feature of Haskell?
+-- 1. parameteric polymorphism
+-- 2. tail recursion
+-- 3. type inference
+-- 4. mutable variables
+-- 4 is the correct answer
+
+-- what is the type of foldl from class
+-- (b -> a -> b) -> b -> [a] -> b
+
+-- Can foldl be implemented tail recursively and can foldr be implemented tail recursively
+-- only foldl can implement tail recursively.
 
