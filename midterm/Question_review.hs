@@ -72,3 +72,11 @@ module Question_review where
 -- Can foldl be implemented tail recursively and can foldr be implemented tail recursively
 -- only foldl can implement tail recursively.
 
+-- what is the type definition of the following function?
+-- max a b = if a < b then a else b
+-- max :: a -> b -> c
+-- max :: a -> b -> a
+-- max :: a -> a -> a
+-- max :: (Ord a) => a -> a -> a
+-- max :: (Ord a) => a -> a -> a is the correct answer
+
