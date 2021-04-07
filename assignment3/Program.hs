@@ -26,4 +26,4 @@ main = do
   putStrLn " "
 
   putStrLn "Sorting people by age in the descending order. If people have same age then sort by alphabetical (lexicographically) order: "
-  mapM print (sortBy compare2 people) -- sort by age
+  mapM_ print (sortBy compare2 people) -- sort by age
